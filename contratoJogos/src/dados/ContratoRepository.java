@@ -43,6 +43,7 @@ public class ContratoRepository {
             comparacao = valorMinutoTotalCliente(clienteComparacao);
             if (comparacao > maiorValor){
                 maiorCliente = clienteComparacao;
+                maiorValor = comparacao;
             }
         }
 

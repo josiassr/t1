@@ -21,29 +21,14 @@ public class JogoRepository{
         return null;
     }
 
-    public ArrayList<Jogo> encontrarJogoCategoria(String nomeCategoria){
-        if (!nomeCategoria.equals("AVENTURA") && !nomeCategoria.equals("ESTRATEGIA") && !nomeCategoria.equals("CORRIDA")){
-            System.out.println("6:erro-categoria inexistente.");
-            return null;
-        }
-        Categoria cat;
-        if (nomeCategoria.equals("AVENTURA"))
-            cat = Categoria.AVENTURA;
-        else if (nomeCategoria.equals("ESTRATEGIA"))
-            cat = Categoria.ESTRATEGIA;
-        else
-            cat = Categoria.CORRIDA;
-        
+    public ArrayList<Jogo> encontrarJogoCategoria(Categoria categoria){
         ArrayList<Jogo> aux = new ArrayList<Jogo>();
         for (Jogo j : jogos){
-            if (j.getCategoria() == cat) 
+            if (j.getCategoria() == categoria) 
                 aux.add(j);
         }
 
-        if (aux.size() <= 0)
-            System.out.println("6:erro-nenhum jogo encontrado");
-
-        return aux;
+        return new ArrayList<Jogo>();
     }
 
     public ArrayList<Jogo> listarJogosAno(int ano){
@@ -73,7 +58,7 @@ public class JogoRepository{
         return aux;
     }
 
-    public ArrayList<Jogo> listarjogos(){
+    public ArrayList<Jogo> listarJogos(){
         ArrayList<Jogo> aux = new ArrayList<Jogo>();
         for (Jogo j : jogos){
             aux.add(j);

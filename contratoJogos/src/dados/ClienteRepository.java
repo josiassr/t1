@@ -3,7 +3,7 @@ package dados;
 import java.util.ArrayList;
 
 public class ClienteRepository {
-    ArrayList <Cliente> clientes;
+    private ArrayList <Cliente> clientes;
 
     public ClienteRepository(){
         clientes = new ArrayList<Cliente>();

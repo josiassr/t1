@@ -14,4 +14,14 @@ public class Jogo {
         this.valorMinuto = valorMinuto;
         this.categoria = categoria;
     }
+
+    public int getCodigo(){return codigo;}
+    public String getNome() {return nome;}
+    public int getAno(){return ano;}
+    public double getValorMinuto(){return valorMinuto;}
+    public Categoria getCategoria(){return categoria;}
+    
+    public String descrever(){
+        return codigo + ";" + nome + ";" + ano + ";" + valorMinuto + ";" + categoria.getNome();
+    }
 }

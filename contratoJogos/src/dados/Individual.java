@@ -12,6 +12,6 @@ public class Individual extends Cliente{
 
     @Override
     public String descrever(){
-        return "";
+        return super.getNumero() + ";" + super.getNome() + ";" + super.getEmail() + ";" + cpf;
     }
 }

@@ -15,6 +15,6 @@ public class Corporativo extends Cliente{
 
     @Override
     public String descrever(){
-        return "";
+        return super.getNumero() + ";" + super.getNome() + ";" + super.getEmail() + ";" + cnpj + ";" + nomeFantasia;
     }
 }

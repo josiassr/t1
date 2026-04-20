@@ -11,9 +11,11 @@ public abstract class Cliente {
         this.email = email;
     }
 
-    public abstract String descrever();
-
     public int getNumero(){return numero;}
     public String getNome(){return nome;}
     public String getEmail(){return email;}
+
+    public void setNome(String nome){this.nome = nome;}
+
+    public abstract String descrever();
 }

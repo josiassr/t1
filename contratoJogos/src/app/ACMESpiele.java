@@ -1,6 +1,5 @@
 package app;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -221,9 +220,23 @@ public class ACMESpiele {
         //System.out.print("Digite a categoria desejada: ");
         entrada.nextLine();
         String nomeCategoria = entrada.nextLine();
-        ArrayList<Jogo> jogosCategoria = jogos.encontrarJogoCategoria(nomeCategoria);
-        if (jogosCategoria == null)
+        Categoria cat;
+
+        if (!nomeCategoria.equals("AVENTURA") && !nomeCategoria.equals("ESTRATEGIA") && !nomeCategoria.equals("CORRIDA")){
+            System.out.println("6:erro-categoria inexistente.");
             return;
+        } else {
+            if (nomeCategoria.equals("AVENTURA"))
+                cat = Categoria.AVENTURA;
+            else if (nomeCategoria.equals("ESTRATEGIA"))
+                cat = Categoria.ESTRATEGIA;
+            else
+                cat = Categoria.CORRIDA;
+        }
+        
+        ArrayList<Jogo> jogosCategoria = jogos.encontrarJogoCategoria(cat);
+        if (jogosCategoria.size() == 0)
+            System.out.println("6:erro-nenhum jogo encontrado.");
         else {
             for (Jogo j : jogosCategoria){
                 System.out.println("6:"+j.getCategoria().getNome()+";"+j.getCodigo()+";"+j.getNome());

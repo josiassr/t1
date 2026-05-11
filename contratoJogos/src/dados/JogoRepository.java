@@ -28,7 +28,7 @@ public class JogoRepository{
                 aux.add(j);
         }
 
-        return new ArrayList<Jogo>();
+        return aux;
     }
 
     public ArrayList<Jogo> listarJogosAno(int ano){
